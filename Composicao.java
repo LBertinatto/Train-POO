@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Composicao{
     private List<Vagao> vagao;
     private List<Locomotiva> locomotiva;
