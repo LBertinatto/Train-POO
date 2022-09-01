@@ -1,22 +1,28 @@
-public class Locomotiva{
+public class Locomotiva {
     private int id;
     private double pesoMaximo;
     private int numeroMaximoVagoes;
-    private Composicao composicao;
+    private Composicao composicao=null;
 
-    public static int getIdentificadorLocomotiva(){
-        return 0;
+    public Locomotiva(int id, double pesoMaximo, int numeroMaximoVagoes) {
+        this.id = id;
+        this.pesoMaximo = pesoMaximo;
+        this.numeroMaximoVagoes = numeroMaximoVagoes;
     }
 
-    public double getPesoMaximo(){
-        return 0.0;
+    public int getId() {
+        return id;
     }
 
-    public int getQtadadeMaxVagoes(){
-        return 0;
+    public double getPesoMaximo() {
+        return pesoMaximo;
     }
 
-    public int getComposicao(){
-        return 0;
+    public int getNumeroMaximoVagoes() {
+        return numeroMaximoVagoes;
     }
 
+    public Composicao getComposicao() {
+        return composicao;
+    }
+}

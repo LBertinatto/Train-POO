@@ -1,19 +1,24 @@
  public class Vagao {
     private int id;
     private double capacidade;
-    private Composicao composicao;
+    private Composicao composicao=null;
 
 
-    public int getIdentificadorVagao(){
-        return 0;
+     public Vagao(int id, double capacidade) {
+         this.id = id;
+         this.capacidade = capacidade;
+     }
+
+     public int getId(){
+        return id;
     }
 
-    public double getCapacidadeCarga(){
-        return 0.0;
+    public double getCapacidade(){
+        return capacidade;
     }
 
-    public int getComposicao(){
-        return 0;
+    public Composicao getComposicao(){
+        return composicao;
     }
 
     

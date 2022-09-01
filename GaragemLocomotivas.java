@@ -1,8 +1,13 @@
 import java.util.ArrayList;
 
 public class GaragemLocomotivas {
-    private ArrayList<Locomotiva> locomotivasLivres;
-    public Vagao buscarLocomotivaLivre(int id) {
+    private ArrayList<Locomotiva> locomotivas;
+    public Locomotiva buscarLocomotivaLivre(int id) {
+        for (Locomotiva x : locomotivas) {
+            if (id==x.getId() && x.getComposicao()==null) {
+                return x;
+            }
+        }
         return null;
-    }    
+    }
 }

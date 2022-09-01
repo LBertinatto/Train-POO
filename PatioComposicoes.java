@@ -1,4 +1,6 @@
+import java.util.ArrayList;
+
 public class PatioComposicoes {
-    private List<Composicao> composicoes;
+    private ArrayList<Composicao> composicoes;
     
 }
