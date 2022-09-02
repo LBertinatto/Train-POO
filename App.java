@@ -120,7 +120,8 @@ public class App {
                 System.out.println("Indique o Trem que você deseja desfazer:");
                 int id2 = sc.nextInt();
 
-                //TODO: Desfazer o trem e colocar os vagões e locomotivas disponíveis na garagem
+                PatioComposicoes.desfazerTrem(id2);
+                System.out.println("Trem número %.0f foi removido. Seu(s) vagão(ões) e locomotiva(s) já estão disponíveis na garagem.");
             break;
 
             case 5: 
@@ -152,6 +153,5 @@ public class App {
         System.out.println("6: Encerrar a edição do trem");
         int escolha = sc.nextInt();
 */
-
     }
 }
