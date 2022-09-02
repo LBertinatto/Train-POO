@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class PatioComposicoes {
-    private ArrayList<Composicao> composicoes = new ArrayList<>();
+    private static ArrayList<Composicao> composicoes = new ArrayList<>();
 
     public void criaTrem (int id, Locomotiva locomotiva) {
         composicoes.add(new Composicao(id, locomotiva));
     }
 
-    public Composicao getComposicao(int id) {
+    public static Composicao getComposicao(int id) {
         for (Composicao x: composicoes) {
             if (x.getId()==id) return x;
         }
@@ -15,7 +15,7 @@ public class PatioComposicoes {
         return null;
     }
 
-    public void desfazerTrem(int id) {
+    public static void desfazerTrem(int id) {
         Composicao trem = getComposicao(id);
         if (trem != null) {
             trem.desfazTrem();
