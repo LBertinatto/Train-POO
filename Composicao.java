@@ -1,11 +1,10 @@
-import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.ArrayList;
 
 
 public class Composicao{
-    private ArrayList<Vagao> vagoes = new ArrayList<>();
-    private ArrayList<Locomotiva> locomotivas = new ArrayList<>();
+    private static ArrayList<Vagao> vagoes = new ArrayList<>();
+    private static ArrayList<Locomotiva> locomotivas = new ArrayList<>();
     private int id;
     private int quantVagoes=0;
     private int quantLocomotivas=0;
@@ -134,7 +133,7 @@ public class Composicao{
     /**
      * libera todos vagoes e locomotivas que estavam no trem
      */
-    public void desfazTrem() {
+    public static void desfazTrem() {
         for (Locomotiva x : locomotivas) {
             x.setComposicao(null);
         }
@@ -143,3 +142,4 @@ public class Composicao{
         }
     }
 }
+
