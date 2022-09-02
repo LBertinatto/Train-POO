@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
-public class GaragemLocomotivas {
-    private ArrayList<Locomotiva> locomotivas = new ArrayList<>();
+public class GaragemVagoes {
+    private ArrayList<Vagao> vagoes = new ArrayList<>();
 
-    /**
-     * construtor padrão que adiciona locomotivas livres na lista.
+  /**
+     * construtor padrão que adiciona vagões livres na lista.
      */
-    public GaragemLocomotivas() {
-        locomotivas.add(new Locomotiva(1, 1000, 50));
-        locomotivas.add(new Locomotiva(2, 1000, 50));
-        locomotivas.add(new Locomotiva(3, 1000, 50));
-        locomotivas.add(new Locomotiva(4, 1000, 50));
-        locomotivas.add(new Locomotiva(5, 1000, 50));
+    public GaragemVagoes() {
+        vagoes.add(new Vagao(1, 1000));
+        vagoes.add(new Vagao(2, 1000));
+        vagoes.add(new Vagao(3, 1000));
+        vagoes.add(new Vagao(4, 1000));
+        vagoes.add(new Vagao(5, 1000));
     }
 
-    public Locomotiva buscarLocomotivaLivre(int id) {
-        for (Locomotiva x : locomotivas) {
+    public Vagao buscarVagaoLivre(int id) {
+        for (Vagao x : vagoes) {
             if (id==x.getId() && x.getComposicao()==null) {
                 return x;
             }
@@ -23,4 +23,7 @@ public class GaragemLocomotivas {
         return null;
     }
 
+
 }
+
+
