@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class App {
     
-    public static String[] opcoes(){
-        
+    public static String[] menu(){
+
         String[] options = new String[7];
-      
+
         System.out.println(options[0] = "Opções: ");
         System.out.println(options[1] = "1: Criar um trem");
         System.out.println(options[2] = "2: Editar um trem");
@@ -14,48 +14,52 @@ public class App {
         System.out.println(options[5] = "5: Finalizar o programa");
         return options;
     }
-    
+
     public static String[] opcoesTrem(){
-        
+
         String[] optionsEdicao = new String[7];
-      
-        System.out.println(optionsEdicao[0] = "Opções: ");
+
+        System.out.println(optionsEdicao[0] = "Opcoes: ");
         System.out.println(optionsEdicao[1] = "1: Inserir uma locomotiva");
-        System.out.println(optionsEdicao[2] = "2: Inserir um vagão");
-        System.out.println(optionsEdicao[3] = "3: Remover o último elemento do trem");
+        System.out.println(optionsEdicao[2] = "2: Inserir um vagao");
+        System.out.println(optionsEdicao[3] = "3: Remover o ultimo elemento do trem");
         System.out.println(optionsEdicao[4] = "4: Listar locomotivas livres");
-        System.out.println(optionsEdicao[5] = "5: Listar vagões livres");
-        System.out.println(optionsEdicao[6] = "6: Encerrar a edição do trem");
-        
+        System.out.println(optionsEdicao[5] = "5: Listar vagoes livres");
+        System.out.println(optionsEdicao[6] = "6: Encerrar a ediçao do trem");
+
         return optionsEdicao;
-    } 
+    }
+
     public static void main(String[] args) {
-        opcoes();
         Scanner sc = new Scanner(System.in);
+        GaragemLocomotivas garagemLoco = new GaragemLocomotivas();
+        GaragemVagoes garagemVagoes = new GaragemVagoes();
+        PatioComposicoes patioDeComp = new PatioComposicoes();
+        //criar objeto composicao (entra em conflito com outro)
+
+        menu();
         int op = sc.nextInt();
         
         switch (op) {
             case 1:
                 System.out.println("\f   \t\t Criar um Trem:");
                 System.out.println("\n");
-                
-                GaragemLocomotivas garagemLoco = new GaragemLocomotivas();
-                GaragemVagoes garagemVagoes = new GaragemVagoes();
-                PatioComposicoes patioDeComp = new PatioComposicoes();
-            
+
                 System.out.println("Indique o Identificador do Trem:");
                 int idTrem = sc.nextInt();
 
                 System.out.println("Agora, Indique a primeira Locomotiva:");
+                garagemLoco.imprimirLocomotivasLivres();
                 //TODO: Printar todas as locomotivas disponíveis
                 int idLoco = sc.nextInt();
-
+                //CRIAR TREM COM METODO CRIAR TREM
+                patioDeComp.criaTrem(idTrem,garagemLoco.buscarLocomotivaLivre(idLoco));
                 //TODO: Mensagem se que indica se o trem foi criado ou não (usar isEmpty(), talvez)
                 
                 break;
             
             case 2:
-                
+
                 System.out.println("\f   \t\t Editar um Trem:");
                 System.out.println("\n");
                 
@@ -71,28 +75,39 @@ public class App {
                            System.out.println("Informe o identificador da locomotiva a ser inserida:");
                            int id3 = sc.nextInt();
                            //TODO:  Inserir uma locomotiva respeitando restrições
+                            //verificar se o id é de uma locomotiva livre.
+                            garagemLoco.buscarLocomotivaLivre(id3);
+                            //engata locomotiva
                             break;
                         
                             case 2:
                             System.out.println("Informe o vagão a ser inserido:");
                             int id4 = sc.nextInt();
                             //TODO: Inserir um vagão respeitando restrições
+                            //verifica se vagao e livre
+                            garagemVagoes.buscarVagaoLivre(id4);
+                            //engata vagao
+
+
                             break;
 
                         case 3:
                             System.out.println("Indique o trem do qual você quer remover o último elemento:");
                             int id5 = sc.nextInt();
                             //TODO: Remover o último elemento do trem indicado
+                            //abrir objeto composicao e utilizar metodo removerUltimoElemento
                             break;
 
                         case 4:
                             System.out.println("Estas são as locomotivas livre:");
                             //TODO: Listar locomotivas livres
+                            garagemLoco.imprimirLocomotivasLivres();
                             break;
 
                         case 5:
                             System.out.println("Estes são os vagões livres:");
                             //TODO: Listar vagões livres
+                            garagemVagoes.imprimirVagoesLivres();
                             break;
                             
                         case 6:

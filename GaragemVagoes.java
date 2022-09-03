@@ -23,6 +23,14 @@ public class GaragemVagoes {
         return null;
     }
 
+    public void imprimirVagoesLivres()  {
+        for (Vagao x : vagoes)    {
+            if (x.getComposicao()==null)    {
+                System.out.println(x.getId());
+            }
+        }
+    }
+
 
 }
 

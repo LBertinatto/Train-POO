@@ -23,4 +23,12 @@ public class GaragemLocomotivas {
         return null;
     }
 
+    public void imprimirLocomotivasLivres()  {
+        for (Locomotiva x : locomotivas)    {
+            if (x.getComposicao()==null)    {
+                System.out.println(x.getId());
+            }
+        }
+    }
+
 }
