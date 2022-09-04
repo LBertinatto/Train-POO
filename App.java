@@ -4,7 +4,7 @@ public class App {
 
     public static void menu(){
 
-        System.out.println("Opções: ");
+        System.out.println("Opcoes: ");
         System.out.println("1: Criar um trem");
         System.out.println("2: Editar um trem");
         System.out.println("3: Listar todos os trem criados");
@@ -20,7 +20,7 @@ public class App {
         System.out.println("3: Remover o ultimo elemento do trem");
         System.out.println("4: Listar locomotivas livres");
         System.out.println("5: Listar vagoes livres");
-        System.out.println("6: Encerrar a ediçao do trem");
+        System.out.println("6: Encerrar a edicao do trem");
 
     }
 
@@ -70,22 +70,22 @@ public class App {
                         System.out.println("\f   \t\t Editar um Trem:");
                         System.out.println("\n");
 
-                        System.out.println("Qual trem você deseja editar? Indique o identificador:");
+                        System.out.println("Qual trem voce deseja editar? Indique o identificador:");
                         if (!sc.hasNextInt()) {
-                            System.out.println("Entrada Inválida. O identificador deve ser um número inteiro");
+                            System.out.println("Entrada Invalida. O identificador deve ser um numero inteiro");
                             sc.next();
                             break;
                         }
                         int id = sc.nextInt();
                         Composicao editTrem = PatioComposicoes.getComposicao(id);
                         if (editTrem == null) {
-                            System.out.println("Não existe um trem com esse identificador");
+                            System.out.println("Nao existe um trem com esse identificador");
                             break;
                         }
-                        System.out.println("O que você deseja editar no trem?");
+                        System.out.println("O que voce deseja editar no trem?");
                         opcoesTrem();
                         if (!sc.hasNextInt()) {
-                            System.out.println("Entrada Inválida. Por favor selecione uma das opções apresentadas");
+                            System.out.println("Entrada Invalida. Por favor selecione uma das opcoes apresentadas");
                             sc.next();
                             break;
                         }
@@ -96,14 +96,14 @@ public class App {
                                 System.out.println("Informe o identificador da locomotiva a ser inserida:");
                                 garagemLoco.imprimirLocomotivasLivres();
                                 if (!sc.hasNextInt()) {
-                                    System.out.println("Entrada Inválida. O identificador deve ser um número inteiro");
+                                    System.out.println("Entrada Invalida. O identificador deve ser um numero inteiro");
                                     sc.next();
                                     break;
                                 }
                                 int idLocInserir = sc.nextInt();
                                 Locomotiva locoInserir = garagemLoco.buscarLocomotivaLivre(idLocInserir);
                                 if (locoInserir == null) {
-                                    System.out.println("Não há uma locomotiva livre com esse identificador");
+                                    System.out.println("Nao ha uma locomotiva livre com esse identificador");
                                     break;
                                 }
                                 if(editTrem.engataLocomotiva(locoInserir)) {
@@ -113,10 +113,10 @@ public class App {
                                 break;
 
                             case 2:
-                                System.out.println("Informe o identificador do vagão a ser inserido:");
+                                System.out.println("Informe o identificador do vagao a ser inserido:");
                                 garagemVagoes.imprimirVagoesLivres();
                                 if (!sc.hasNextInt()) {
-                                    System.out.println("Entrada Inválida. O identificador deve ser um número inteiro");
+                                    System.out.println("Entrada Invalida. O identificador deve ser um numero inteiro");
                                     sc.next();
                                     break;
                                 }
@@ -125,12 +125,12 @@ public class App {
                                 Vagao vagaoInserir = garagemVagoes.buscarVagaoLivre(idVagaoInserir);
 
                                 if (vagaoInserir == null) {
-                                    System.out.println("Não há um vagão livre com esse identificador");
+                                    System.out.println("Nao ha um vagao livre com esse identificador");
                                     break;
                                 }
 
                                 if (editTrem.engataVagao(vagaoInserir)) {
-                                    System.out.println("Vagão " + idVagaoInserir + " engatado com sucesso");
+                                    System.out.println("Vagao " + idVagaoInserir + " engatado com sucesso");
                                 }
                                 break;
 
@@ -139,21 +139,21 @@ public class App {
                                 break;
 
                             case 4:
-                                System.out.println("Estas são as locomotivas livre:");
+                                System.out.println("Estas sao as locomotivas livre:");
                                 garagemLoco.imprimirLocomotivasLivres();
                                 break;
 
                             case 5:
-                                System.out.println("Estes são os vagões livres:");
+                                System.out.println("Estes sao os vagoes livres:");
                                 garagemVagoes.imprimirVagoesLivres();
                                 break;
 
                             case 6:
-                                System.out.println("Edição Encerrada!");
+                                System.out.println("Edicao Encerrada!");
                                 break;
 
                             default:
-                                System.out.println("Opção Indisponível. Selecione um número de 1 à 6.");
+                                System.out.println("Opçao Indisponivel. Selecione um numero de 1 a 6.");
                                 break;
                         }
                         break;
@@ -165,27 +165,27 @@ public class App {
                     case 4:
                         System.out.println("\f   \t\t Desfazer um Trem:");
 
-                        System.out.println("Indique o Trem que você deseja desfazer:");
+                        System.out.println("Indique o Trem que voce deseja desfazer:");
                         if (!sc.hasNextInt()) {
-                            System.out.println("Entrada Inválida. O identificador deve ser um número inteiro");
+                            System.out.println("Entrada Invalida. O identificador deve ser um numero inteiro");
                             sc.next();
                             break;
                         }
                         int idTremDesfazer = sc.nextInt();
 
                         if (PatioComposicoes.getComposicao(idTremDesfazer)==null) {
-                            System.out.println("Não é possível desfazer um trem inexistente");
+                            System.out.println("Nao e possivel desfazer um trem inexistente");
                             break;
                         }
                         PatioComposicoes.desfazerTrem(idTremDesfazer);
-                        System.out.println("Trem número " + idTremDesfazer + " foi removido. Seu(s) vagão(ões) e locomotiva(s) já estão disponíveis na garagem.");
+                        System.out.println("Trem numero " + idTremDesfazer + " foi removido. Seu(s) vagao(oes) e locomotiva(s) ja estao disponiveis na garagem.");
                         break;
 
                     case 5:
                         System.out.println("\f   \t\t Finalizando Programa....");
                         System.exit(0);
                     default:
-                        System.out.println("Opção Indisponível. Selecione um número de 1 à 5.");
+                        System.out.println("Opcao Indisponivel. Selecione um numero de 1 a 5.");
                         break;
                 }
             }

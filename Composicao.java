@@ -116,11 +116,11 @@ public class Composicao{
             vagoes.remove(vagao);
             quantVagoes--;
             pesoVagoes-=vagao.getCapacidade();
-            System.out.println("Vagão "+vagao.getId()+" removido");
+            System.out.println("Vagao "+vagao.getId()+" removido");
 
         } else if (quantLocomotivas > 0) {
             if (quantLocomotivas==1) {
-                System.out.println("Não é possível remover a primeira locomotiva do trem");
+                System.out.println("Nao e possivel remover a primeira locomotiva do trem");
 
             }
             Locomotiva locomotiva = locomotivas.get(quantLocomotivas-1);   //locomotiva que deve ser removida
@@ -131,7 +131,7 @@ public class Composicao{
             maximoDeVagoes-= locomotiva.getNumeroMaximoVagoes();
             System.out.println("Locomotiva "+locomotiva.getId()+" removida");
         } else {
-            System.out.println("Trem vazio, não há nada para remover");
+            System.out.println("Trem vazio, nao ha nada para remover");
 
         }
     }
