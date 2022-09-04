@@ -23,6 +23,7 @@ public class Composicao{
         quantLocomotivas++;
         pesoMaxLocomotivas+=locomotiva.getPesoMaximo();
         maximoDeVagoes+= locomotiva.getNumeroMaximoVagoes();
+        locomotiva.setComposicao(id);
     }
 
     public int getId() {
@@ -108,25 +109,30 @@ public class Composicao{
      * remove o ultimo elemento do trem, podendo ser vagão ou locomotiva, e atualiza os dados
      * @return true se for possivel remover, false se o trem estiver vazio
      */
-    public boolean removerUltimoElemento() {
+    public void removerUltimoElemento() {
         if (quantVagoes > 0) {      //se houver pelo menos 1 vagão, o ultimo elemento do trem deve ser um vagão
             Vagao vagao = vagoes.get(quantVagoes-1);     //vagão que deve ser removido
             vagao.setComposicao(null);                  //marca o vagao como livre na lista de vagoes
             vagoes.remove(vagao);
             quantVagoes--;
             pesoVagoes-=vagao.getCapacidade();
-            return true;
+            System.out.println("Vagão "+vagao.getId()+" removido");
+
         } else if (quantLocomotivas > 0) {
+            if (quantLocomotivas==1) {
+                System.out.println("Não é possível remover a primeira locomotiva do trem");
+
+            }
             Locomotiva locomotiva = locomotivas.get(quantLocomotivas-1);   //locomotiva que deve ser removida
             locomotiva.setComposicao(null);                             //marca locomotiva como livre na lista de locomotivas
             locomotivas.remove(locomotiva);
             quantLocomotivas--;
             pesoMaxLocomotivas-= locomotiva.getPesoMaximo();
             maximoDeVagoes-= locomotiva.getNumeroMaximoVagoes();
-            return true;
+            System.out.println("Locomotiva "+locomotiva.getId()+" removida");
         } else {
             System.out.println("Trem vazio, não há nada para remover");
-            return false;
+
         }
     }
 

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class GaragemLocomotivas {
-    private ArrayList<Locomotiva> locomotivas = new ArrayList<>();
+    private static ArrayList<Locomotiva> locomotivas = new ArrayList<>();
 
     /**
      * construtor padrão que adiciona locomotivas livres na lista.
@@ -12,6 +12,9 @@ public class GaragemLocomotivas {
         locomotivas.add(new Locomotiva(3, 1000, 50));
         locomotivas.add(new Locomotiva(4, 1000, 50));
         locomotivas.add(new Locomotiva(5, 1000, 50));
+        locomotivas.add(new Locomotiva(6, 1000, 50));
+        locomotivas.add(new Locomotiva(7, 1000, 50));
+        locomotivas.add(new Locomotiva(8, 1000, 50));
     }
 
     public Locomotiva buscarLocomotivaLivre(int id) {

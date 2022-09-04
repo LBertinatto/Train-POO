@@ -12,6 +12,9 @@ public class GaragemVagoes {
         vagoes.add(new Vagao(3, 1000));
         vagoes.add(new Vagao(4, 1000));
         vagoes.add(new Vagao(5, 1000));
+        vagoes.add(new Vagao(6, 1000));
+        vagoes.add(new Vagao(7, 1000));
+        vagoes.add(new Vagao(8, 1000));
     }
 
     public Vagao buscarVagaoLivre(int id) {
