@@ -45,13 +45,13 @@ public class App {
                         System.out.println("\f   \t\t Criar um Trem:");
                         System.out.println("Indique o Identificador do Trem:");
                         if (!sc.hasNextInt()) {
-                            System.out.println("Entrada Inválida. O identificador deve ser um número inteiro");
+                            System.out.println("Entrada Invalida. O identificador deve ser um numero inteiro");
                             sc.next();
                             break;
                         }
                         int idTremCriar = sc.nextInt();
                         if (PatioComposicoes.getComposicao(idTremCriar) != null) {
-                            System.out.println("Já existe um trem com este identificador.");
+                            System.out.println("Ja existe um trem com este identificador.");
                             break;
                         }
 
@@ -61,7 +61,7 @@ public class App {
                             int idLoco1 = sc.nextInt();
                             PatioComposicoes.criaTrem(idTremCriar, garagemLoco.buscarLocomotivaLivre(idLoco1));
                         } catch (Exception e) {
-                            System.out.println("Entrada Inválida. Por favor selecione uma das locomotivas listadas");
+                            System.out.println("Entrada Invalida. Por favor selecione uma das locomotivas listadas");
                         }
                         break;
 
